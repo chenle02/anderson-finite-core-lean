@@ -1,0 +1,15 @@
+{
+  "commit": "6b2c9d12f6166ca98c4c750c77e83fbbbab1ed7e",
+  "lean_toolchain": "leanprover/lean4:v4.34.1",
+  "mathlib_rev": "d13f23b723b8a846827a245b89c10fc7d3f11612",
+  "sorry_count": 0,
+  "axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "report_sha256": "669888aabe9aa5477af11128e347f17de052e5f45ac6bcd329dba051572a9cf5",
+  "job_id": "systemd-user:and-audit-gate.service:73476f17dd4e40efaba0d873624ee58d@csm-lzc0090-l-1",
+  "checker": "lake build AndersonAudit ComparatorChallenges; lake env lean AndersonAudit/Axioms.lean (#print axioms x21); lake env leanchecker AndersonAudit.FiniteCore; sorry/admit scan of AndersonAudit/",
+  "generated_at": "2026-10-14T15:15:48Z"
+}

@@ -1,0 +1,100 @@
+{
+  "build_provenance": {
+    "compiled": false,
+    "modules_built": 0,
+    "prebuilt": true,
+    "source": null
+  },
+  "commit": "6b2c9d12f6166ca98c4c750c77e83fbbbab1ed7e",
+  "configs": [
+    {
+      "challenge_module": "ComparatorChallenges.AndersonFiniteCore",
+      "definition_names": [],
+      "log": ".lean-receipts/6b2c9d12f616-comparator-comparator_config-finite-core.log",
+      "log_sha256": "87fb1d825116eef0bee9eea7a1aaac8029e7ef85ea2a9d97ed44ad51c592f73d",
+      "path": "comparator/config-finite-core.json",
+      "permitted_axioms": [
+        "propext",
+        "Quot.sound",
+        "Classical.choice"
+      ],
+      "result": "pass",
+      "sha256": "4a458ec050f8042db36ffa4130641a644849ece41fe6848e0436761b3d4644f7",
+      "solution_module": "AndersonAudit.FiniteCore",
+      "theorem_names": [
+        "AndersonAudit.ward_general",
+        "AndersonAudit.ward_physical",
+        "AndersonAudit.scattering_symm",
+        "AndersonAudit.scattering_unitary",
+        "AndersonAudit.contraction_identity",
+        "AndersonAudit.contraction_ineq",
+        "AndersonAudit.contraction_norm_le_one",
+        "AndersonAudit.scattering_blocks",
+        "AndersonAudit.scattering_blocks_symm",
+        "AndersonAudit.closed_siteMatrix",
+        "AndersonAudit.closure_formula",
+        "AndersonAudit.energy_closure_general",
+        "AndersonAudit.quadForm_real",
+        "AndersonAudit.energy_closure",
+        "AndersonAudit.energy_closure_scattering",
+        "AndersonAudit.energy_trace",
+        "AndersonAudit.endpoint_ports",
+        "AndersonAudit.endpoint_resolvent_step",
+        "AndersonAudit.endpoint_adjugate_entry",
+        "AndersonAudit.endpoint_damped_entry",
+        "AndersonAudit.endpoint_identity"
+      ]
+    }
+  ],
+  "generated_at": "2026-10-14T15:17:13+00:00",
+  "host": "csm-lzc0090-l-1",
+  "host_policy": "host csm-lzc0090-l-1 listed in COMPARATOR_RECEIPT_ALLOWED_HOSTS",
+  "job_id": "local-csm-lzc0090-l-1-2676838-20261014T151713Z",
+  "lean_threads": null,
+  "lean_toolchain": "leanprover/lean4:v4.34.1",
+  "mechanism": "legacy",
+  "result": "pass",
+  "schema": "comparator-receipt/2",
+  "stack_limit": {
+    "hard_kb": "unlimited",
+    "soft_kb": "unlimited",
+    "source": "COMPARATOR_RECEIPT_STACK"
+  },
+  "stages": [
+    {
+      "exit": 0,
+      "stage": "checkout",
+      "status": "ok",
+      "wall_s": 0.604
+    },
+    {
+      "exit": 0,
+      "stage": "cache-get",
+      "status": "ok",
+      "wall_s": 3.805
+    },
+    {
+      "exit": 0,
+      "stage": "build",
+      "status": "ok",
+      "wall_s": 2.804
+    },
+    {
+      "exit": 0,
+      "stage": "comparator",
+      "status": "ok",
+      "wall_s": 51.436
+    }
+  ],
+  "toolchain_resolution": {
+    "lake": "<home>/.elan/bin/lake",
+    "source": "elan",
+    "version": "Lake version 5.0.0-src+5045d00 (Lean version 4.34.1)"
+  },
+  "tools": {
+    "comparator": "575674928e239f5bc452aab72d1dd7b0f1326494",
+    "landrun": "811cfff51ceaf3d9843708aa6d22e9b84ccac8b4",
+    "lean4export": "076e8e57707e813375e8f9da8bf989799ace9680",
+    "nanoda": "68d5ca9db226849b41a6fff59d796ff19d0a8840"
+  }
+}

@@ -1,0 +1,47 @@
+⚠ [8924/8929] Built ComparatorChallenges.AndersonFiniteCore (6.4s)
+warning: ComparatorChallenges/AndersonFiniteCore.lean:73:8: declaration uses `sorry`
+warning: ComparatorChallenges/AndersonFiniteCore.lean:80:8: declaration uses `sorry`
+warning: ComparatorChallenges/AndersonFiniteCore.lean:89:8: declaration uses `sorry`
+warning: ComparatorChallenges/AndersonFiniteCore.lean:96:8: declaration uses `sorry`
+warning: ComparatorChallenges/AndersonFiniteCore.lean:105:8: declaration uses `sorry`
+warning: ComparatorChallenges/AndersonFiniteCore.lean:114:8: declaration uses `sorry`
+warning: ComparatorChallenges/AndersonFiniteCore.lean:124:8: declaration uses `sorry`
+warning: ComparatorChallenges/AndersonFiniteCore.lean:134:8: declaration uses `sorry`
+warning: ComparatorChallenges/AndersonFiniteCore.lean:143:8: declaration uses `sorry`
+warning: ComparatorChallenges/AndersonFiniteCore.lean:155:8: declaration uses `sorry`
+warning: ComparatorChallenges/AndersonFiniteCore.lean:166:8: declaration uses `sorry`
+warning: ComparatorChallenges/AndersonFiniteCore.lean:187:8: declaration uses `sorry`
+warning: ComparatorChallenges/AndersonFiniteCore.lean:196:8: declaration uses `sorry`
+warning: ComparatorChallenges/AndersonFiniteCore.lean:205:8: declaration uses `sorry`
+warning: ComparatorChallenges/AndersonFiniteCore.lean:216:8: declaration uses `sorry`
+warning: ComparatorChallenges/AndersonFiniteCore.lean:229:8: declaration uses `sorry`
+warning: ComparatorChallenges/AndersonFiniteCore.lean:239:8: declaration uses `sorry`
+warning: ComparatorChallenges/AndersonFiniteCore.lean:247:8: declaration uses `sorry`
+warning: ComparatorChallenges/AndersonFiniteCore.lean:255:8: declaration uses `sorry`
+warning: ComparatorChallenges/AndersonFiniteCore.lean:261:8: declaration uses `sorry`
+warning: ComparatorChallenges/AndersonFiniteCore.lean:269:8: declaration uses `sorry`
+✔ [8925/8929] Built AndersonAudit.FiniteCore (7.7s)
+✔ [8926/8929] Built ComparatorChallenges (2.6s)
+ℹ [8928/8929] Built AndersonAudit.Axioms (2.8s)
+info: AndersonAudit/Axioms.lean:3:0: 'AndersonAudit.ward_general' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AndersonAudit/Axioms.lean:4:0: 'AndersonAudit.ward_physical' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AndersonAudit/Axioms.lean:5:0: 'AndersonAudit.scattering_symm' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AndersonAudit/Axioms.lean:6:0: 'AndersonAudit.scattering_unitary' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AndersonAudit/Axioms.lean:7:0: 'AndersonAudit.contraction_identity' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AndersonAudit/Axioms.lean:8:0: 'AndersonAudit.contraction_ineq' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AndersonAudit/Axioms.lean:9:0: 'AndersonAudit.contraction_norm_le_one' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AndersonAudit/Axioms.lean:10:0: 'AndersonAudit.scattering_blocks' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AndersonAudit/Axioms.lean:11:0: 'AndersonAudit.scattering_blocks_symm' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AndersonAudit/Axioms.lean:12:0: 'AndersonAudit.closed_siteMatrix' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AndersonAudit/Axioms.lean:13:0: 'AndersonAudit.closure_formula' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AndersonAudit/Axioms.lean:14:0: 'AndersonAudit.energy_closure_general' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AndersonAudit/Axioms.lean:15:0: 'AndersonAudit.quadForm_real' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AndersonAudit/Axioms.lean:16:0: 'AndersonAudit.energy_closure' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AndersonAudit/Axioms.lean:17:0: 'AndersonAudit.energy_closure_scattering' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AndersonAudit/Axioms.lean:18:0: 'AndersonAudit.energy_trace' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AndersonAudit/Axioms.lean:19:0: 'AndersonAudit.endpoint_ports' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AndersonAudit/Axioms.lean:20:0: 'AndersonAudit.endpoint_resolvent_step' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AndersonAudit/Axioms.lean:21:0: 'AndersonAudit.endpoint_adjugate_entry' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AndersonAudit/Axioms.lean:22:0: 'AndersonAudit.endpoint_damped_entry' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AndersonAudit/Axioms.lean:23:0: 'AndersonAudit.endpoint_identity' depends on axioms: [propext, Classical.choice, Quot.sound]
+Build completed successfully (8929 jobs).

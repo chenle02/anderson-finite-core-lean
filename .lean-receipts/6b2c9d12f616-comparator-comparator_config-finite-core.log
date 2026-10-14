@@ -1,0 +1,33 @@
+Building ComparatorChallenges.AndersonFiniteCore
+⚠ [8924/8924] Replayed ComparatorChallenges.AndersonFiniteCore
+warning: ComparatorChallenges/AndersonFiniteCore.lean:73:8: declaration uses `sorry`
+warning: ComparatorChallenges/AndersonFiniteCore.lean:80:8: declaration uses `sorry`
+warning: ComparatorChallenges/AndersonFiniteCore.lean:89:8: declaration uses `sorry`
+warning: ComparatorChallenges/AndersonFiniteCore.lean:96:8: declaration uses `sorry`
+warning: ComparatorChallenges/AndersonFiniteCore.lean:105:8: declaration uses `sorry`
+warning: ComparatorChallenges/AndersonFiniteCore.lean:114:8: declaration uses `sorry`
+warning: ComparatorChallenges/AndersonFiniteCore.lean:124:8: declaration uses `sorry`
+warning: ComparatorChallenges/AndersonFiniteCore.lean:134:8: declaration uses `sorry`
+warning: ComparatorChallenges/AndersonFiniteCore.lean:143:8: declaration uses `sorry`
+warning: ComparatorChallenges/AndersonFiniteCore.lean:155:8: declaration uses `sorry`
+warning: ComparatorChallenges/AndersonFiniteCore.lean:166:8: declaration uses `sorry`
+warning: ComparatorChallenges/AndersonFiniteCore.lean:187:8: declaration uses `sorry`
+warning: ComparatorChallenges/AndersonFiniteCore.lean:196:8: declaration uses `sorry`
+warning: ComparatorChallenges/AndersonFiniteCore.lean:205:8: declaration uses `sorry`
+warning: ComparatorChallenges/AndersonFiniteCore.lean:216:8: declaration uses `sorry`
+warning: ComparatorChallenges/AndersonFiniteCore.lean:229:8: declaration uses `sorry`
+warning: ComparatorChallenges/AndersonFiniteCore.lean:239:8: declaration uses `sorry`
+warning: ComparatorChallenges/AndersonFiniteCore.lean:247:8: declaration uses `sorry`
+warning: ComparatorChallenges/AndersonFiniteCore.lean:255:8: declaration uses `sorry`
+warning: ComparatorChallenges/AndersonFiniteCore.lean:261:8: declaration uses `sorry`
+warning: ComparatorChallenges/AndersonFiniteCore.lean:269:8: declaration uses `sorry`
+Build completed successfully (8924 jobs).
+Exporting #[Nat, String, String.mk, Char, Quot, Quot.mk, Quot.lift, Quot.ind, AndersonAudit.ward_general, AndersonAudit.ward_physical, AndersonAudit.scattering_symm, AndersonAudit.scattering_unitary, AndersonAudit.contraction_identity, AndersonAudit.contraction_ineq, AndersonAudit.contraction_norm_le_one, AndersonAudit.scattering_blocks, AndersonAudit.scattering_blocks_symm, AndersonAudit.closed_siteMatrix, AndersonAudit.closure_formula, AndersonAudit.energy_closure_general, AndersonAudit.quadForm_real, AndersonAudit.energy_closure, AndersonAudit.energy_closure_scattering, AndersonAudit.energy_trace, AndersonAudit.endpoint_ports, AndersonAudit.endpoint_resolvent_step, AndersonAudit.endpoint_adjugate_entry, AndersonAudit.endpoint_damped_entry, AndersonAudit.endpoint_identity, propext, Quot.sound, Classical.choice, Nat.add, Nat.sub, Nat.mul, Nat.pow, Nat.gcd, Nat.div, Nat.mod, Nat.beq, Nat.ble, Nat.land, Nat.lor, Nat.xor, Nat.shiftLeft, Nat.shiftRight, String.ofList, Char.ofNat, List, eagerReduce] from ComparatorChallenges.AndersonFiniteCore
+Building AndersonAudit.FiniteCore
+Build completed successfully (8924 jobs).
+Exporting #[Nat, String, String.mk, Char, Quot, Quot.mk, Quot.lift, Quot.ind, AndersonAudit.ward_general, AndersonAudit.ward_physical, AndersonAudit.scattering_symm, AndersonAudit.scattering_unitary, AndersonAudit.contraction_identity, AndersonAudit.contraction_ineq, AndersonAudit.contraction_norm_le_one, AndersonAudit.scattering_blocks, AndersonAudit.scattering_blocks_symm, AndersonAudit.closed_siteMatrix, AndersonAudit.closure_formula, AndersonAudit.energy_closure_general, AndersonAudit.quadForm_real, AndersonAudit.energy_closure, AndersonAudit.energy_closure_scattering, AndersonAudit.energy_trace, AndersonAudit.endpoint_ports, AndersonAudit.endpoint_resolvent_step, AndersonAudit.endpoint_adjugate_entry, AndersonAudit.endpoint_damped_entry, AndersonAudit.endpoint_identity, propext, Quot.sound, Classical.choice, Nat.add, Nat.sub, Nat.mul, Nat.pow, Nat.gcd, Nat.div, Nat.mod, Nat.beq, Nat.ble, Nat.land, Nat.lor, Nat.xor, Nat.shiftLeft, Nat.shiftRight, String.ofList, Char.ofNat, List, eagerReduce] from AndersonAudit.FiniteCore
+Running nanoda kernel on solution
+nanoda kernel accepts the solution
+Running Lean default kernel on solution.
+Lean default kernel accepts the solution
+Your solution is okay!
