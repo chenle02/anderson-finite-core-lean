@@ -1,0 +1,9 @@
+version = 1
+SPDX-PackageName = "conj-anderson-lean"
+SPDX-PackageDownloadLocation = "https://github.com/chenle02/conj-anderson-lean"
+
+[[annotations]]
+path = ["**"]
+precedence = "aggregate"
+SPDX-FileCopyrightText = "2026 Le Chen and Auburn University"
+SPDX-License-Identifier = "Apache-2.0"

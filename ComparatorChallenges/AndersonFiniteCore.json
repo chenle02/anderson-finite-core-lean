@@ -1,0 +1,34 @@
+{
+  "challenge_module": "ComparatorChallenges.AndersonFiniteCore",
+  "definition_names": [],
+  "enable_nanoda": true,
+  "permitted_axioms": [
+    "propext",
+    "Quot.sound",
+    "Classical.choice"
+  ],
+  "solution_module": "AndersonAudit.FiniteCore",
+  "theorem_names": [
+    "AndersonAudit.ward_general",
+    "AndersonAudit.ward_physical",
+    "AndersonAudit.scattering_symm",
+    "AndersonAudit.scattering_unitary",
+    "AndersonAudit.contraction_identity",
+    "AndersonAudit.contraction_ineq",
+    "AndersonAudit.contraction_norm_le_one",
+    "AndersonAudit.scattering_blocks",
+    "AndersonAudit.scattering_blocks_symm",
+    "AndersonAudit.closed_siteMatrix",
+    "AndersonAudit.closure_formula",
+    "AndersonAudit.energy_closure_general",
+    "AndersonAudit.quadForm_real",
+    "AndersonAudit.energy_closure",
+    "AndersonAudit.energy_closure_scattering",
+    "AndersonAudit.energy_trace",
+    "AndersonAudit.endpoint_ports",
+    "AndersonAudit.endpoint_resolvent_step",
+    "AndersonAudit.endpoint_adjugate_entry",
+    "AndersonAudit.endpoint_damped_entry",
+    "AndersonAudit.endpoint_identity"
+  ]
+}

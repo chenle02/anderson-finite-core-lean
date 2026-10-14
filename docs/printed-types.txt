@@ -1,0 +1,152 @@
+@ward_general : ∀ {n : Type} [inst : Fintype n] [inst_1 : DecidableEq n] {L G : Matrix n n ℂ},
+  L * G = 1 →
+    G * L = 1 →
+      imPart G = Gᴴ * -imPart L * G ∧
+        imPart G = G * -imPart L * Gᴴ
+@ward_physical : ∀ {n m : Type} [inst : Fintype n] [inst_1 : DecidableEq n] [inst_2 : Fintype m]
+  {H : Matrix n n ℝ},
+  Hᵀ = H →
+    ∀ (E : ℝ) (Y : Matrix n m ℝ) {G : Matrix n n ℂ},
+      siteMatrix H E Y * G = 1 →
+        G * siteMatrix H E Y = 1 →
+          G - Gᴴ = (2 * I) • (Gᴴ * (cplx Y * (cplx Y)ᵀ) * G) ∧
+            G - Gᴴ = (2 * I) • (G * (cplx Y * (cplx Y)ᵀ) * Gᴴ)
+@scattering_symm : ∀ {n m : Type} [inst : Fintype n] [inst_1 : DecidableEq n] [inst_2 : Fintype m]
+  [inst_3 : DecidableEq m] {H : Matrix n n ℝ},
+  Hᵀ = H →
+    ∀ (E : ℝ) (Y : Matrix n m ℝ) {G : Matrix n n ℂ},
+      siteMatrix H E Y * G = 1 →
+        G * siteMatrix H E Y = 1 →
+          (scatteringMatrix Y G)ᵀ = scatteringMatrix Y G
+@scattering_unitary : ∀ {n m : Type} [inst : Fintype n] [inst_1 : DecidableEq n] [inst_2 : Fintype m]
+  [inst_3 : DecidableEq m] {H : Matrix n n ℝ},
+  Hᵀ = H →
+    ∀ (E : ℝ) (Y : Matrix n m ℝ) {G : Matrix n n ℂ},
+      siteMatrix H E Y * G = 1 →
+        G * siteMatrix H E Y = 1 →
+          (scatteringMatrix Y G)ᴴ * scatteringMatrix Y G = 1 ∧
+            scatteringMatrix Y G * (scatteringMatrix Y G)ᴴ = 1
+@contraction_identity : ∀ {n m : Type} [inst : Fintype n] [inst_1 : DecidableEq n] [inst_2 : Fintype m]
+  {L G : Matrix n n ℂ},
+  L * G = 1 →
+    G * L = 1 →
+      ∀ (Y : Matrix n m ℝ),
+        imPart ((cplx Y)ᵀ * G * cplx Y) -
+            ((cplx Y)ᵀ * G * cplx Y)ᴴ *
+              ((cplx Y)ᵀ * G * cplx Y) =
+          (cplx Y)ᵀ * Gᴴ * (-imPart L - cplx Y * (cplx Y)ᵀ) *
+              G *
+            cplx Y
+@contraction_ineq : ∀ {n m : Type} [inst : Fintype n] [inst_1 : DecidableEq n] [inst_2 : Fintype m]
+  {L G : Matrix n n ℂ},
+  L * G = 1 →
+    G * L = 1 →
+      ∀ (Y : Matrix n m ℝ),
+        (-imPart L - cplx Y * (cplx Y)ᵀ).PosSemidef →
+          ∀ (a : m → ℂ),
+            (star (((cplx Y)ᵀ * G * cplx Y) *ᵥ a) ⬝ᵥ
+                  ((cplx Y)ᵀ * G * cplx Y) *ᵥ a).re ≤
+              (star a ⬝ᵥ ((cplx Y)ᵀ * G * cplx Y) *ᵥ a).im
+@contraction_norm_le_one : ∀ {n m : Type} [inst : Fintype n] [inst_1 : DecidableEq n] [inst_2 : Fintype m]
+  [inst_3 : DecidableEq m] {L G : Matrix n n ℂ},
+  L * G = 1 →
+    G * L = 1 →
+      ∀ (Y : Matrix n m ℝ),
+        (-imPart L - cplx Y * (cplx Y)ᵀ).PosSemidef →
+          ‖(cplx Y)ᵀ * G * cplx Y‖ ≤ 1
+@scattering_blocks : ∀ {n r c : Type} [inst : Fintype n] [Fintype r] [inst_2 : DecidableEq r] [Fintype c]
+  [inst_4 : DecidableEq c] (YR : Matrix n r ℝ) (YC : Matrix n c ℝ) (G : Matrix n n ℂ),
+  scatteringMatrix (YR.fromCols YC) G =
+    fromBlocks (1 + (2 * I) • portResponse YR G YR) ((2 * I) • portResponse YR G YC)
+      ((2 * I) • portResponse YC G YR) (1 + (2 * I) • portResponse YC G YC)
+@scattering_blocks_symm : ∀ {n r c : Type} [inst : Fintype n] [inst_1 : DecidableEq n]
+  [inst_2 : Fintype r] [inst_3 : DecidableEq r] [inst_4 : Fintype c] [inst_5 : DecidableEq c] {H : Matrix n n ℝ},
+  Hᵀ = H →
+    ∀ (E : ℝ) (YR : Matrix n r ℝ) (YC : Matrix n c ℝ) {G : Matrix n n ℂ},
+      siteMatrix H E (YR.fromCols YC) * G = 1 →
+        scatteringMatrix (YR.fromCols YC) G =
+          fromBlocks (1 + (2 * I) • portResponse YR G YR) ((2 * I) • portResponse YR G YC)
+            ((2 * I) • portResponse YR G YC)ᵀ (1 + (2 * I) • portResponse YC G YC)
+@closed_siteMatrix : ∀ {n r c : Type} [inst : Fintype r] [inst_1 : Fintype c] [inst_2 : DecidableEq n]
+  (H : Matrix n n ℝ) (E : ℝ) (YR : Matrix n r ℝ) (YC : Matrix n c ℝ) (w : ℝ),
+  siteMatrix H E (YR.fromCols YC) + (↑w + I) • (cplx YC * (cplx YC)ᵀ) =
+    siteMatrix (H + w • (YC * YCᵀ)) E YR
+@closure_formula : ∀ {n r c : Type} [inst : Fintype n] [inst_1 : DecidableEq n] [inst_2 : Fintype r]
+  [inst_3 : DecidableEq r] [inst_4 : Fintype c] [inst_5 : DecidableEq c] {H : Matrix n n ℝ},
+  Hᵀ = H →
+    ∀ (E : ℝ) (YR : Matrix n r ℝ) (YC : Matrix n c ℝ) (w : ℝ) {G Gw : Matrix n n ℂ},
+      siteMatrix H E (YR.fromCols YC) * G = 1 →
+        G * siteMatrix H E (YR.fromCols YC) = 1 →
+          (siteMatrix H E (YR.fromCols YC) +
+                  (↑w + I) • (cplx YC * (cplx YC)ᵀ)) *
+                Gw =
+              1 →
+            Gw *
+                  (siteMatrix H E (YR.fromCols YC) +
+                    (↑w + I) • (cplx YC * (cplx YC)ᵀ)) =
+                1 →
+              IsUnit (1 - ((↑w + I) / (↑w - I)) • (1 + (2 * I) • portResponse YC G YC)) ∧
+                scatteringMatrix YR Gw =
+                  1 + (2 * I) • portResponse YR G YR +
+                    ((↑w + I) / (↑w - I)) •
+                      ((2 * I) • portResponse YR G YC *
+                          (1 - ((↑w + I) / (↑w - I)) • (1 + (2 * I) • portResponse YC G YC))⁻¹ *
+                        ((2 * I) • portResponse YR G YC)ᵀ)
+@energy_closure_general : ∀ {r : Type} [inst : Fintype r] [inst_1 : DecidableEq r] (f : r → ℝ)
+  (A : Matrix r r ℂ) (u w : r → ℂ) (γ : ℂ),
+  energyQ f (A + γ • vecMulVec u w) - energyQ f A =
+    -2 * ↑(γ * w ⬝ᵥ (realDiag f * Aᴴ * realDiag f) *ᵥ u).re -
+      ↑(normSq γ) * (star u ⬝ᵥ realDiag f *ᵥ u * w ⬝ᵥ realDiag f *ᵥ star w)
+@quadForm_real : ∀ {r : Type} [inst : Fintype r] [inst_1 : DecidableEq r] (f : r → ℝ) (u : r → ℂ),
+  (star u ⬝ᵥ realDiag f *ᵥ u).im = 0
+@energy_closure : ∀ {r : Type} [inst : Fintype r] [inst_1 : DecidableEq r] (f : r → ℝ) (A : Matrix r r ℂ),
+  Aᵀ = A →
+    ∀ (u : r → ℂ) (γ : ℂ),
+      energyQ f (A + γ • vecMulVec u u) - energyQ f A =
+        -2 * ↑(γ * u ⬝ᵥ (realDiag f * Aᴴ * realDiag f) *ᵥ u).re -
+          ↑(normSq γ) * (star u ⬝ᵥ realDiag f *ᵥ u) ^ 2
+@energy_closure_scattering : ∀ {r : Type} [inst : Fintype r] [inst_1 : DecidableEq r] (f : r → ℝ)
+  (S : Matrix (Option r) (Option r) ℂ),
+  Sᵀ = S →
+    ∀ (γ : ℂ),
+      energyQ f
+            (S.submatrix some some + γ • vecMulVec (fun j => S (some j) none) fun j => S none (some j)) -
+          energyQ f (S.submatrix some some) =
+        -2 *
+            ↑(γ *
+                  (fun j => S (some j) none) ⬝ᵥ
+                    (realDiag f * (S.submatrix some some)ᴴ * realDiag f) *ᵥ fun j =>
+                      S (some j) none).re -
+          ↑(normSq γ) * ((star fun j => S (some j) none) ⬝ᵥ realDiag f *ᵥ fun j => S (some j) none) ^ 2
+@energy_trace : ∀ {r : Type} [inst : Fintype r] [inst_1 : DecidableEq r] (f : r → ℝ) (S : Matrix r r ℂ),
+  Sᴴ * S = 1 → S * Sᴴ = 1 → ↑(1 / 2 * ∑ a, ∑ j, normSq (S j a) * (f j - f a) ^ 2) = energyQ f S
+@endpoint_ports : ∀ {n : Type} [inst : Fintype n] [inst_1 : DecidableEq n] {x y : n},
+  x ≠ y →
+    ∀ {τ : ℝ},
+      0 ≤ τ →
+        ∀ (G : Matrix n n ℂ),
+          cplx (probeMatrix x y τ) *
+                (cplx (probeMatrix x y τ))ᵀ =
+              ↑τ • twoSiteProj x y ∧
+            scatteringMatrix (probeMatrix x y τ) G =
+              1 + (2 * I * ↑τ) • pairRestrict G x y
+@endpoint_resolvent_step : ∀ {n : Type} [inst : Fintype n] [inst_1 : DecidableEq n]
+  {L₀ G₀ G : Matrix n n ℂ} {x y : n},
+  x ≠ y →
+    ∀ (τ : ℝ),
+      L₀ * G₀ = 1 →
+        (L₀ - (I * ↑τ) • twoSiteProj x y) * G = 1 →
+          (1 - (I * ↑τ) • pairRestrict G₀ x y) * pairRestrict G x y =
+            pairRestrict G₀ x y
+endpoint_adjugate_entry : ∀ (g : Matrix (Fin 2) (Fin 2) ℂ) (c : ℂ), ((1 - c • g).adjugate * g) 0 1 = g 0 1
+endpoint_damped_entry : ∀ (g : Matrix (Fin 2) (Fin 2) ℂ) (τ : ℝ),
+  (1 - (I * ↑τ) • g).det ≠ 0 → ((1 - (I * ↑τ) • g)⁻¹ * g) 0 1 = g 0 1 / (1 - (I * ↑τ) • g).det
+@endpoint_identity : ∀ {n : Type} [inst : Fintype n] [inst_1 : DecidableEq n] {L₀ G₀ G : Matrix n n ℂ}
+  {x y : n},
+  x ≠ y →
+    ∀ (τ : ℝ),
+      L₀ * G₀ = 1 →
+        (L₀ - (I * ↑τ) • twoSiteProj x y) * G = 1 →
+          G₀ x y * (2 * I * ↑τ) =
+            (1 + (2 * I * ↑τ) • pairRestrict G x y) 0 1 *
+              (1 - (I * ↑τ) • pairRestrict G₀ x y).det

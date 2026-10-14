@@ -1,0 +1,320 @@
+# claims/1 for conj-anderson-lean (read by `lean-pkg claims sync`; see lean-pkg docs/lifecycle.md).
+# Scope: only the finite-dimensional algebraic core of P2 is formalized; none of these claims is the
+# paper's localization theorem (README.md, docs/scope.md). `reusable`: the paper-labelled results;
+# `internal`: steps toward them. Every decl is in comparator/config-finite-core.json.
+schema: claims/1
+package: conj-anderson-lean
+claims:
+- id: conj-anderson-lean/ward-general
+  decl: AndersonAudit.ward_general
+  kind: theorem
+  summary: For an invertible finite complex matrix L with G = L^-1 and W = -Im L, Im G = G* W G = G W G* (the Ward identity, no other hypothesis on L).
+  aliases: []
+  keywords:
+  - anderson-model
+  - finite-algebraic-core
+  - ward-identity
+  - resolvent
+  - scattering-matrix
+  file: AndersonAudit/FiniteCore.lean
+  status: reusable
+  superseded_by: null
+  citation: P2 (openai/math family 261 at adc7f124), mat:ward-identity, sections/matrix.tex:48-53
+  depends_on: []
+- id: conj-anderson-lean/ward-physical
+  decl: AndersonAudit.ward_physical
+  kind: theorem
+  summary: 'The Ward identity in the physical case W = Y Y^T: G - G* = 2i G* (Y Y^T) G = 2i G (Y Y^T) G*.'
+  aliases: []
+  keywords:
+  - anderson-model
+  - finite-algebraic-core
+  - ward-identity
+  file: AndersonAudit/FiniteCore.lean
+  status: internal
+  superseded_by: null
+  citation: P2 (openai/math family 261 at adc7f124), mat:ward-identity, sections/matrix.tex:10-15, 66-70
+  depends_on: []
+- id: conj-anderson-lean/scattering-symm
+  decl: AndersonAudit.scattering_symm
+  kind: theorem
+  summary: For a real symmetric site Hamiltonian and real port matrix Y, the scattering matrix S = 1 + 2i Y^T G Y of the finite system is symmetric.
+  aliases: []
+  keywords:
+  - anderson-model
+  - finite-algebraic-core
+  - scattering-matrix
+  - time-reversal
+  file: AndersonAudit/FiniteCore.lean
+  status: reusable
+  superseded_by: null
+  citation: P2 (openai/math family 261 at adc7f124), mat:response, sections/matrix.tex:59-60, 84-85
+  depends_on: []
+- id: conj-anderson-lean/scattering-unitary
+  decl: AndersonAudit.scattering_unitary
+  kind: theorem
+  summary: 'The scattering matrix S = 1 + 2i Y^T G Y of the finite physical system is unitary: S* S = 1 and S S* = 1.'
+  aliases: []
+  keywords:
+  - anderson-model
+  - finite-algebraic-core
+  - scattering-matrix
+  - unitarity
+  file: AndersonAudit/FiniteCore.lean
+  status: reusable
+  superseded_by: null
+  citation: P2 (openai/math family 261 at adc7f124), mat:response, sections/matrix.tex:59-60, 78-84
+  depends_on: []
+- id: conj-anderson-lean/contraction-identity
+  decl: AndersonAudit.contraction_identity
+  kind: theorem
+  summary: With K = Y^T G Y and W = -Im L for any invertible L, Im K - K* K = Y^T G* (W - Y Y^T) G Y.
+  aliases: []
+  keywords:
+  - anderson-model
+  - finite-algebraic-core
+  - ward-identity
+  - contraction
+  file: AndersonAudit/FiniteCore.lean
+  status: internal
+  superseded_by: null
+  citation: P2 (openai/math family 261 at adc7f124), mat:ward-contraction, sections/matrix.tex:71-77
+  depends_on: []
+- id: conj-anderson-lean/contraction-ineq
+  decl: AndersonAudit.contraction_ineq
+  kind: theorem
+  summary: If W = -Im L dominates Y Y^T, the port response K = Y^T G Y satisfies |K a|^2 <= Im(a* K a) for every vector a.
+  aliases: []
+  keywords:
+  - anderson-model
+  - finite-algebraic-core
+  - ward-identity
+  - contraction
+  file: AndersonAudit/FiniteCore.lean
+  status: reusable
+  superseded_by: null
+  citation: P2 (openai/math family 261 at adc7f124), mat:ward-contraction, sections/matrix.tex:54-55, 72-77
+  depends_on: []
+- id: conj-anderson-lean/contraction-norm-le-one
+  decl: AndersonAudit.contraction_norm_le_one
+  kind: theorem
+  summary: If W = -Im L dominates Y Y^T, the port response Y^T G Y has l2 operator norm at most 1.
+  aliases: []
+  keywords:
+  - anderson-model
+  - finite-algebraic-core
+  - ward-identity
+  - contraction
+  - operator-norm
+  file: AndersonAudit/FiniteCore.lean
+  status: reusable
+  superseded_by: null
+  citation: P2 (openai/math family 261 at adc7f124), mat:ward-contraction, sections/matrix.tex:56, 76-78
+  depends_on: []
+- id: conj-anderson-lean/scattering-blocks
+  decl: AndersonAudit.scattering_blocks
+  kind: theorem
+  summary: For ports split as Y = [Y_R | Y_C], the lower-left block of the scattering matrix is 2i Y_C^T G Y_R, with no symmetry assumed.
+  aliases: []
+  keywords:
+  - anderson-model
+  - finite-algebraic-core
+  - scattering-matrix
+  file: AndersonAudit/FiniteCore.lean
+  status: internal
+  superseded_by: null
+  citation: P2 (openai/math family 261 at adc7f124), sections/matrix.tex:131-134
+  depends_on: []
+- id: conj-anderson-lean/scattering-blocks-symm
+  decl: AndersonAudit.scattering_blocks_symm
+  kind: theorem
+  summary: For the physical system the scattering matrix has the block form [[A, T], [T^T, B]] for ports split as [Y_R | Y_C].
+  aliases: []
+  keywords:
+  - anderson-model
+  - finite-algebraic-core
+  - scattering-matrix
+  file: AndersonAudit/FiniteCore.lean
+  status: internal
+  superseded_by: null
+  citation: P2 (openai/math family 261 at adc7f124), sections/matrix.tex:131-134
+  depends_on: []
+- id: conj-anderson-lean/closed-site-matrix
+  decl: AndersonAudit.closed_siteMatrix
+  kind: theorem
+  summary: Closing the ports C, i.e. removing their absorption and adding the real shift w Y_C Y_C^T, gives the physical site matrix of the closed system.
+  aliases: []
+  keywords:
+  - anderson-model
+  - finite-algebraic-core
+  - port-closure
+  file: AndersonAudit/FiniteCore.lean
+  status: internal
+  superseded_by: null
+  citation: P2 (openai/math family 261 at adc7f124), sections/matrix.tex:135-136, 148-149
+  depends_on: []
+- id: conj-anderson-lean/closure-formula
+  decl: AndersonAudit.closure_formula
+  kind: theorem
+  summary: 'Closing ports C of a finite scattering system: if L and L_w are invertible, 1 - zB is invertible and the reduced scattering matrix is A + z T (1 - zB)^-1 T^T with z = (w+i)/(w-i).'
+  aliases: []
+  keywords:
+  - anderson-model
+  - finite-algebraic-core
+  - port-closure
+  - scattering-matrix
+  - schur-complement
+  file: AndersonAudit/FiniteCore.lean
+  status: reusable
+  superseded_by: null
+  citation: P2 (openai/math family 261 at adc7f124), mat:closure-formula, sections/matrix.tex:129-154
+  depends_on: []
+- id: conj-anderson-lean/energy-closure-general
+  decl: AndersonAudit.energy_closure_general
+  kind: theorem
+  summary: For any A, u, w, gamma and real diagonal F, the trace energy satisfies Q(A + gamma u w^T) - Q(A) = -2 Re(gamma w^T F A* F u) - |gamma|^2 (u* F u)(w^T F conj w).
+  aliases: []
+  keywords:
+  - anderson-model
+  - finite-algebraic-core
+  - energy-identity
+  - port-closure
+  file: AndersonAudit/FiniteCore.lean
+  status: internal
+  superseded_by: null
+  citation: P2 (openai/math family 261 at adc7f124), sections/matrix.tex:186-194 (non-symmetric form)
+  depends_on: []
+- id: conj-anderson-lean/quad-form-real
+  decl: AndersonAudit.quadForm_real
+  kind: theorem
+  summary: For a real diagonal matrix F the quadratic form u* F u is real.
+  aliases: []
+  keywords:
+  - anderson-model
+  - finite-algebraic-core
+  - energy-identity
+  file: AndersonAudit/FiniteCore.lean
+  status: internal
+  superseded_by: null
+  citation: P2 (openai/math family 261 at adc7f124), sections/matrix.tex:195
+  depends_on: []
+- id: conj-anderson-lean/energy-closure
+  decl: AndersonAudit.energy_closure
+  kind: theorem
+  summary: 'Single-port closure energy identity: for S_z = A + gamma u u^T and real diagonal F, Q(S_z) - Q(A) = -2 Re(gamma u^T F A* F u) - |gamma|^2 (u* F u)^2.'
+  aliases: []
+  keywords:
+  - anderson-model
+  - finite-algebraic-core
+  - energy-identity
+  - port-closure
+  - time-reversal
+  file: AndersonAudit/FiniteCore.lean
+  status: reusable
+  superseded_by: null
+  citation: P2 (openai/math family 261 at adc7f124), mat:energy-closure, sections/matrix.tex:189-194
+  depends_on: []
+- id: conj-anderson-lean/energy-closure-scattering
+  decl: AndersonAudit.energy_closure_scattering
+  kind: theorem
+  summary: Read off a symmetric scattering matrix, single-port closure gives A + gamma u u^T, so the energy change carries the perfect square (u* F u)^2.
+  aliases: []
+  keywords:
+  - anderson-model
+  - finite-algebraic-core
+  - energy-identity
+  - time-reversal
+  file: AndersonAudit/FiniteCore.lean
+  status: internal
+  superseded_by: null
+  citation: P2 (openai/math family 261 at adc7f124), sections/matrix.tex:165-168, 186-189
+  depends_on: []
+- id: conj-anderson-lean/energy-trace
+  decl: AndersonAudit.energy_trace
+  kind: theorem
+  summary: For a unitary S and real f, one half of the sum over a, j of |S_ja|^2 (f_j - f_a)^2 equals tr(F^2 - F S F S*).
+  aliases: []
+  keywords:
+  - anderson-model
+  - finite-algebraic-core
+  - energy-identity
+  - unitarity
+  file: AndersonAudit/FiniteCore.lean
+  status: reusable
+  superseded_by: null
+  citation: P2 (openai/math family 261 at adc7f124), mat:energy-trace, sections/matrix.tex:116-126
+  depends_on: []
+- id: conj-anderson-lean/endpoint-ports
+  decl: AndersonAudit.endpoint_ports
+  kind: theorem
+  summary: 'Two probes of strength tau at sites x, y are ports: Y Y^T = tau P and S = 1 + 2i tau G restricted to {x, y}.'
+  aliases: []
+  keywords:
+  - anderson-model
+  - finite-algebraic-core
+  - endpoint-identity
+  - resolvent
+  file: AndersonAudit/FiniteCore.lean
+  status: internal
+  superseded_by: null
+  citation: P2 (openai/math family 261 at adc7f124), sections/bootstrap.tex:517-530
+  depends_on: []
+- id: conj-anderson-lean/endpoint-resolvent-step
+  decl: AndersonAudit.endpoint_resolvent_step
+  kind: theorem
+  summary: 'Resolvent subtraction for two probes: with L = L0 - i tau P and g = G0 on {x, y}, (1 - i tau g) G on {x, y} equals g.'
+  aliases: []
+  keywords:
+  - anderson-model
+  - finite-algebraic-core
+  - endpoint-identity
+  - resolvent
+  file: AndersonAudit/FiniteCore.lean
+  status: internal
+  superseded_by: null
+  citation: P2 (openai/math family 261 at adc7f124), sections/bootstrap.tex:517-522
+  depends_on: []
+- id: conj-anderson-lean/endpoint-adjugate-entry
+  decl: AndersonAudit.endpoint_adjugate_entry
+  kind: theorem
+  summary: For every 2 x 2 complex matrix g and scalar c, the off-diagonal entry of adj(1 - c g) g equals g_xy.
+  aliases: []
+  keywords:
+  - anderson-model
+  - finite-algebraic-core
+  - endpoint-identity
+  file: AndersonAudit/FiniteCore.lean
+  status: internal
+  superseded_by: null
+  citation: P2 (openai/math family 261 at adc7f124), sections/bootstrap.tex:524-528
+  depends_on: []
+- id: conj-anderson-lean/endpoint-damped-entry
+  decl: AndersonAudit.endpoint_damped_entry
+  kind: theorem
+  summary: When det(1 - i tau g) is nonzero, the damped off-diagonal entry is g_xy / det(1 - i tau g).
+  aliases: []
+  keywords:
+  - anderson-model
+  - finite-algebraic-core
+  - endpoint-identity
+  file: AndersonAudit/FiniteCore.lean
+  status: internal
+  superseded_by: null
+  citation: P2 (openai/math family 261 at adc7f124), sections/bootstrap.tex:526-528
+  depends_on: []
+- id: conj-anderson-lean/endpoint-identity
+  decl: AndersonAudit.endpoint_identity
+  kind: theorem
+  summary: 'Two-probe endpoint identity, multiplied out: G0_xy times 2i tau equals S_xy times det(1 - i tau g), with no invertibility hypothesis.'
+  aliases: []
+  keywords:
+  - anderson-model
+  - finite-algebraic-core
+  - endpoint-identity
+  - resolvent
+  - scattering-matrix
+  file: AndersonAudit/FiniteCore.lean
+  status: reusable
+  superseded_by: null
+  citation: P2 (openai/math family 261 at adc7f124), boot:endpoint-identity, sections/bootstrap.tex:530-533
+  depends_on: []
