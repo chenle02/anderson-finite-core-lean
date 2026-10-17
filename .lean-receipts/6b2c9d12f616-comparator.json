@@ -1,5 +1,6 @@
 {
   "build_provenance": {
+    "cache_reused": 1,
     "compiled": false,
     "modules_built": 0,
     "prebuilt": true,
@@ -46,13 +47,22 @@
       ]
     }
   ],
-  "generated_at": "2026-10-14T15:17:13+00:00",
-  "host": "csm-lzc0090-l-1",
-  "host_policy": "host csm-lzc0090-l-1 listed in COMPARATOR_RECEIPT_ALLOWED_HOSTS",
-  "job_id": "local-csm-lzc0090-l-1-2676838-20261014T151713Z",
+  "generated_at": "2026-10-17T18:01:33+00:00",
+  "host": "h-24e00fc5da6c",
+  "host_label": "h-24e00fc5da6c",
+  "host_policy": "host h-24e00fc5da6c listed in COMPARATOR_RECEIPT_ALLOWED_HOSTS",
+  "job_id": "local-h-24e00fc5da6c-2821432-20261017T180133Z",
   "lean_threads": null,
   "lean_toolchain": "leanprover/lean4:v4.34.1",
   "mechanism": "legacy",
+  "olean_manifest": {
+    "captured": "build",
+    "files": 4,
+    "lake_manifest_sha256": "6f5c6387507a07c952376c81319237dd8e67778421afe4e460c0c6568ebe9f2e",
+    "lean_toolchain": "leanprover/lean4:v4.34.1",
+    "schema": "olean-manifest/1",
+    "sha256": "d7d36f88ea4e7592cd8c340bc8ad9e16b91a4614ec5d218ff8a8b04a5746508e"
+  },
   "result": "pass",
   "schema": "comparator-receipt/2",
   "stack_limit": {
@@ -65,25 +75,25 @@
       "exit": 0,
       "stage": "checkout",
       "status": "ok",
-      "wall_s": 0.604
+      "wall_s": 17.219
     },
     {
       "exit": 0,
       "stage": "cache-get",
       "status": "ok",
-      "wall_s": 3.805
+      "wall_s": 4.81
     },
     {
       "exit": 0,
       "stage": "build",
       "status": "ok",
-      "wall_s": 2.804
+      "wall_s": 8.217
     },
     {
       "exit": 0,
       "stage": "comparator",
       "status": "ok",
-      "wall_s": 51.436
+      "wall_s": 104.589
     }
   ],
   "toolchain_resolution": {

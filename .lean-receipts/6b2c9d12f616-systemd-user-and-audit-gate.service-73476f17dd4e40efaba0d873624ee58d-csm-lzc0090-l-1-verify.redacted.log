@@ -1,0 +1,35 @@
+anderson-finite-core-lean lower-tier gate report
+commit: 6b2c9d12f6166ca98c4c750c77e83fbbbab1ed7e
+tree: df60a0b2f1d9ce3b66c66d7dfa44d404c337faa9
+dirty-tracked: 0
+evidence dir: .lean-receipts/6b2c9d12f616-gate-evidence
+lean-toolchain: leanprover/lean4:v4.34.1
+mathlib_rev: d13f23b723b8a846827a245b89c10fc7d3f11612
+systemd invocation: 73476f17dd4e40efaba0d873624ee58d
+date: 2026-10-14T15:15:48Z
+--- source sha256 (tracked .lean, json, toml, manifest)
+01db4ced60824a2516c18e79197afdbc2f975f02315616757d88b2a3aa151fda  AndersonAudit.lean
+2b56ad42c82cfd4f2e2c73ad810ba4892ea26a259e1c4f88e3f44ab41074faf0  AndersonAudit/Axioms.lean
+1fcd4c9d2ba2fb1695cb1573a36f2f2af54a0986343fffb7996d8899a1f20d01  AndersonAudit/FiniteCore.lean
+f8f99636cb05372a2549068d0aa5cd30fd7cd2754d374fc108c23f7384edbf46  ComparatorChallenges.lean
+4a458ec050f8042db36ffa4130641a644849ece41fe6848e0436761b3d4644f7  ComparatorChallenges/AndersonFiniteCore.json
+1cd3ac3242ae21b0d6b936f113cc4de02e5d780e44201cf27b5e74bded0209da  ComparatorChallenges/AndersonFiniteCore.lean
+49cf47c9faf8dc924f477bb0a6591dc5b39aa260f13f8b795245bc7c19c811e0  REUSE.toml
+4a458ec050f8042db36ffa4130641a644849ece41fe6848e0436761b3d4644f7  comparator/config-finite-core.json
+6f5c6387507a07c952376c81319237dd8e67778421afe4e460c0c6568ebe9f2e  lake-manifest.json
+71d42b4a4c9cab71e4bab23928bbea2835269e00f20a1af07d804b9dc48f7386  lakefile.toml
+d5edba4e4b8faad9c1baeadb265716d20d03be4d1a2647dc5e35b0c0325bea7b  lean-toolchain
+--- sorry/admit scan of solution modules (AndersonAudit/)
+sorry_admit_hits: 0
+--- lake build
+build rc=0 errors=0 solution-warnings=0
+--- axioms
+axiom lines: 21
+sorryAx hits: 0
+--- leanchecker
+leanchecker rc=0
+--- log hashes
+778639f165b57d4996437e585488f19b3d6b096509b014bb3ea0d4a266933609  .lean-receipts/6b2c9d12f616-gate-evidence/gate-build.log
+f360ec207cf3c0fabbb97dd0e579f5fe8e58fe459d4883c2227dc2ae3700f2f6  .lean-receipts/6b2c9d12f616-gate-evidence/gate-axioms.txt
+e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855  .lean-receipts/6b2c9d12f616-gate-evidence/gate-leanchecker.log
+VERDICT: PASS
