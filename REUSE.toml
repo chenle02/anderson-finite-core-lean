@@ -1,6 +1,6 @@
 version = 1
 SPDX-PackageName = "conj-anderson-lean"
-SPDX-PackageDownloadLocation = "https://github.com/chenle02/conj-anderson-lean"
+SPDX-PackageDownloadLocation = "https://github.com/chenle02/anderson-finite-core-lean"
 
 [[annotations]]
 path = ["**"]
