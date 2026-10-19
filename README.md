@@ -17,8 +17,8 @@ Lean 4 proofs of the finite-dimensional algebraic identities (absorption identit
 
 Twenty-one theorems about finite complex matrices, in [`AndersonAudit/FiniteCore.lean`](AndersonAudit/FiniteCore.lean),
 each checked against its statement in [`ComparatorChallenges/AndersonFiniteCore.lean`](ComparatorChallenges/AndersonFiniteCore.lean).
-Throughout, $\operatorname{Im}D=(D-D^*)/(2i)$, $Y$ is a real port matrix, $H^\#$ is real symmetric, $E$ is real,
-$\mathscr L=H^\#-E-iYY^\top$ is the site matrix, $G$ is a two-sided inverse of $\mathscr L$, and $S=\mathbf 1+2iY^\top GY$.
+Throughout, $\operatorname{Im}D=(D-D^*)/(2i)$, $Y$ is a real port matrix, $`H^\#`$ is real symmetric, $E$ is real,
+$`\mathscr L=H^\#-E-iYY^\top`$ is the site matrix, $G$ is a two-sided inverse of $\mathscr L$, and $S=\mathbf 1+2iY^\top GY$.
 Numbers are those of the paper (see [Paper and references](#paper-and-references)).
 
 - **Lemma 3.1 (absorption identities, `mat:ward`).** For any invertible matrix $L$ with inverse $G$ and
@@ -28,17 +28,17 @@ Numbers are those of the paper (see [Paper and references](#paper-and-references
   (`contraction_ineq`, `contraction_norm_le_one`). For the physical system $\mathscr L$, $S$ is symmetric and
   unitary (`scattering_symm`, `scattering_unitary`).
 - **Lemma 3.2 (common-phase closure, `mat:closure`).** With the ports split as $Y=[Y_R\mid Y_C]$ and
-  $S=\begin{pmatrix}A&T\\T^\top&B\end{pmatrix}$, if the closed site matrix $\mathscr L+(w+i)Y_CY_C^\top$ ($w$ real)
+  $`S=\begin{pmatrix}A&T\\T^\top&B\end{pmatrix}`$, if the closed site matrix $\mathscr L+(w+i)Y_CY_C^\top$ ($w$ real)
   is invertible, then $\mathbf 1-zB$ is invertible and the retained-port scattering matrix is
   $A+Tz(\mathbf 1-zB)^{-1}T^\top$, $z=\frac{w+i}{w-i}$ (`AndersonAudit.closure_formula`).
 - **Lemma 3.3 (the exact identity in its proof, `mat:energy-closure`) and equation (3.5).** For real $f$,
   $F=\operatorname{diag}(f)$, $\mathcal Q(M)=\operatorname{tr}(F^2-FMFM^*)$ and a symmetric matrix $A$:
-  $\mathcal Q(A+\gamma uu^\top)-\mathcal Q(A)=-2\operatorname{Re}(\gamma\,u^\top FA^*Fu)-|\gamma|^2(u^*Fu)^2$
+  $`\mathcal Q(A+\gamma uu^\top)-\mathcal Q(A)=-2\operatorname{Re}(\gamma\,u^\top FA^*Fu)-|\gamma|^2(u^*Fu)^2`$
   (`AndersonAudit.energy_closure`); and for unitary $S$,
   $\mathcal Q(S)=\frac12\sum_{a,j}|S_{ja}|^2(f_j-f_a)^2$ (`energy_trace`).
 - **Equation (10.15) (endpoint identity, `boot:endpoint-identity`).** For two probes of strength $\tau$ at sites
-  $x\ne y$, with $G^0$ a right inverse of $L_0$, $g=G^0|_{\{x,y\}}$, $P$ the projection onto $\{x,y\}$ and $G$ a right
-  inverse of $L_0-i\tau P$: $2i\tau\,G^0_{xy}=S_{xy}\det(\mathbf 1-i\tau g)$ with $S=\mathbf 1+2i\tau\,G|_{\{x,y\}}$
+  $x\ne y$, with $G^0$ a right inverse of $L_0$, $`g=G^0|_{\{x,y\}}`$, $P$ the projection onto $`\{x,y\}`$ and $G$ a right
+  inverse of $L_0-i\tau P$: $`2i\tau\,G^0_{xy}=S_{xy}\det(\mathbf 1-i\tau g)`$ with $`S=\mathbf 1+2i\tau\,G|_{\{x,y\}}`$
   (`AndersonAudit.endpoint_identity`), the multiplied-out form of
   $G^0_{xy}=\frac{S_{xy}}{2i\tau}\det(\mathbf 1-i\tau g)$.
 

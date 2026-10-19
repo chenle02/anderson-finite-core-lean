@@ -53,11 +53,11 @@ cited lines (no anchor mismatch found).
 |---|---|---|
 | `cplx A` | real matrix as complex matrix | matrix.tex:4-9 |
 | `imPart D = (2I)⁻¹ • (D − Dᴴ)` | $\operatorname{Im}D=(D-D^*)/(2i)$ | setup.tex:41 |
-| `siteMatrix H E Y = cplx H − E•1 − I•(cplx Y * (cplx Y)ᵀ)` | $\mathscr L=H^\#-E-iYY^\top$ | matrix.tex:11 |
+| `siteMatrix H E Y = cplx H − E•1 − I•(cplx Y * (cplx Y)ᵀ)` | $`\mathscr L=H^\#-E-iYY^\top`$ | matrix.tex:11 |
 | `scatteringMatrix Y G = 1 + (2I)•((cplx Y)ᵀ * G * cplx Y)` | $S=\one+2iY^\top GY$ | matrix.tex:13 |
 | `portResponse Y₁ G Y₂ = (cplx Y₁)ᵀ * G * cplx Y₂` | blocks $Y_1^\top GY_2$ | matrix.tex:71, 133, 150 |
 | `realDiag f`, `energyQ f M = tr(F F − F M F Mᴴ)` | $F=\diag(f)$, $\tr(F^2-FSFS^*)$ | matrix.tex:122-124 |
-| `twoSiteProj x y`, `pairRestrict M x y`, `probeMatrix x y τ` | $P$, $g=G^0|_{\{x,y\}}$, probe ports $\sqrt\tau e_x,\sqrt\tau e_y$ | bootstrap.tex:517-519; matrix.tex:4-7 |
+| `twoSiteProj x y`, `pairRestrict M x y`, `probeMatrix x y τ` | $P$, $`g=G^0|_{\{x,y\}}`$, probe ports $\sqrt\tau e_x,\sqrt\tau e_y$ | bootstrap.tex:517-519; matrix.tex:4-7 |
 
 Representation notes: $G=\mathscr L^{-1}$ is represented by a matrix `G` with `𝓛 * G = 1` and
 `G * 𝓛 = 1` (a design choice), never by `⁻¹`, so no totalized inverse enters T1–T3 statements. Ports are any
@@ -193,7 +193,7 @@ matrix.tex:44-46); the strength-$\sigma$ column convention is recovered in `endp
       ((2 * I) • portResponse YC G YR) (1 + (2 * I) • portResponse YC G YC)
 ```
 
-- Paper: matrix.tex:131-134 — "write $S=\begin{pmatrix}A&T\\T^\top&B\end{pmatrix}$".
+- Paper: matrix.tex:131-134 — "write $`S=\begin{pmatrix}A&T\\T^\top&B\end{pmatrix}`$".
 - Verdict: Faithful (no symmetry: the lower-left block is $2iY_C^\top GY_R$).
 
 #### `scattering_blocks_symm`
@@ -210,7 +210,7 @@ matrix.tex:44-46); the strength-$\sigma$ column convention is recovered in `endp
 ```
 
 - Paper: matrix.tex:131-134.
-- Verdict: Faithful: with real symmetric $H^\#$ the lower-left block is $T^\top$, as the paper writes it.
+- Verdict: Faithful: with real symmetric $`H^\#`$ the lower-left block is $T^\top$, as the paper writes it.
 
 #### `closed_siteMatrix`
 
@@ -222,7 +222,7 @@ matrix.tex:44-46); the strength-$\sigma$ column convention is recovered in `endp
 ```
 
 - Paper: matrix.tex:135-136 "Close every port in $C$ and add the real shift $w\sigma_j$ to the physical diagonal" and matrix.tex:148-149 "$\mathscr L_w=\mathscr L+(w+i)Y_CY_C^\top$".
-- Verdict: Faithful; this is the definitional bridge for T2: the paper's $\mathscr L_w$ is the physical site matrix of $(H^\#+wY_CY_C^\top,E,Y_R)$ (for port columns $\sqrt{{\sigma_j}}e_x$, $wY_CY_C^\top$ is the shift $w\sigma_j$ at each closed-port site). Hence T1 applies to the closed system: $S_z$ is symmetric and unitary.
+- Verdict: Faithful; this is the definitional bridge for T2: the paper's $\mathscr L_w$ is the physical site matrix of $`(H^\#+wY_CY_C^\top,E,Y_R)`$ (for port columns $\sqrt{{\sigma_j}}e_x$, $wY_CY_C^\top$ is the shift $w\sigma_j$ at each closed-port site). Hence T1 applies to the closed system: $S_z$ is symmetric and unitary.
 
 #### `closure_formula`
 
