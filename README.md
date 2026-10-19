@@ -9,7 +9,7 @@ Lean 4 proofs of the finite-dimensional algebraic identities (absorption identit
 [![Mathlib](https://img.shields.io/badge/Mathlib-d13f23b-153e63)](https://github.com/leanprover-community/mathlib4/tree/d13f23b723b8a846827a245b89c10fc7d3f11612)
 [![License](https://img.shields.io/badge/license-Apache--2.0-153e63)](LICENSE)
 
-[What is proved](#what-is-proved) · [Verification page](docs/scope.md) · [Build](#build-and-verify) · [Cite](CITATION.cff)
+[What is proved](#what-is-proved) · [Statements and sign-off](docs/what-is-proved.md) · [Verification page](docs/scope.md) · [Build](#build-and-verify) · [Cite](CITATION.cff)
 
 </div>
 
@@ -19,28 +19,31 @@ Twenty-one theorems about finite complex matrices, in [`AndersonAudit/FiniteCore
 each checked against its statement in [`ComparatorChallenges/AndersonFiniteCore.lean`](ComparatorChallenges/AndersonFiniteCore.lean).
 Throughout, $\operatorname{Im}D=(D-D^*)/(2i)$, $Y$ is a real port matrix, $`H^\#`$ is real symmetric, $E$ is real,
 $`\mathscr L=H^\#-E-iYY^\top`$ is the site matrix, $G$ is a two-sided inverse of $\mathscr L$, and $S=\mathbf 1+2iY^\top GY$.
-Numbers are those of the paper (see [Paper and references](#paper-and-references)).
+Numbers are those of the paper (see [Paper and references](#paper-and-references)). Each result has a card with the
+precise statement, the folded Lean statement and its sign-off on [What is proved](docs/what-is-proved.md).
 
 - **Lemma 3.1 (absorption identities, `mat:ward`).** For any invertible matrix $L$ with inverse $G$ and
-  $W=-\operatorname{Im}L$: $\operatorname{Im}G=G^*WG=GWG^*$ (`AndersonAudit.ward_general`; the paper's
+  $W=-\operatorname{Im}L$: $`\operatorname{Im}G=G^*WG=GWG^*`$ (`AndersonAudit.ward_general`; the paper's
   hypothesis $W\ge YY^\top$ is not needed). If moreover $W\ge YY^\top$, then
   $\lVert Y^\top GYa\rVert^2\le\operatorname{Im}(a^*Y^\top GYa)$ for every $a$ and $\lVert Y^\top GY\rVert\le 1$
   (`contraction_ineq`, `contraction_norm_le_one`). For the physical system $\mathscr L$, $S$ is symmetric and
-  unitary (`scattering_symm`, `scattering_unitary`).
+  unitary (`scattering_symm`, `scattering_unitary`). Cards: [identity](docs/what-is-proved.md#1-absorption-identity),
+  [contraction](docs/what-is-proved.md#2-port-response-is-a-contraction), [symmetric and unitary](docs/what-is-proved.md#3-the-scattering-matrix-is-symmetric-and-unitary).
 - **Lemma 3.2 (common-phase closure, `mat:closure`).** With the ports split as $Y=[Y_R\mid Y_C]$ and
   $`S=\begin{pmatrix}A&T\\T^\top&B\end{pmatrix}`$, if the closed site matrix $\mathscr L+(w+i)Y_CY_C^\top$ ($w$ real)
   is invertible, then $\mathbf 1-zB$ is invertible and the retained-port scattering matrix is
-  $A+Tz(\mathbf 1-zB)^{-1}T^\top$, $z=\frac{w+i}{w-i}$ (`AndersonAudit.closure_formula`).
+  $A+Tz(\mathbf 1-zB)^{-1}T^\top$, $z=\frac{w+i}{w-i}$ (`AndersonAudit.closure_formula`; [card](docs/what-is-proved.md#4-common-phase-closure-formula)).
 - **Lemma 3.3 (the exact identity in its proof, `mat:energy-closure`) and equation (3.5).** For real $f$,
   $F=\operatorname{diag}(f)$, $\mathcal Q(M)=\operatorname{tr}(F^2-FMFM^*)$ and a symmetric matrix $A$:
   $`\mathcal Q(A+\gamma uu^\top)-\mathcal Q(A)=-2\operatorname{Re}(\gamma\,u^\top FA^*Fu)-|\gamma|^2(u^*Fu)^2`$
   (`AndersonAudit.energy_closure`); and for unitary $S$,
-  $\mathcal Q(S)=\frac12\sum_{a,j}|S_{ja}|^2(f_j-f_a)^2$ (`energy_trace`).
+  $\mathcal Q(S)=\frac12\sum_{a,j}|S_{ja}|^2(f_j-f_a)^2$ (`energy_trace`). Cards: [identity](docs/what-is-proved.md#5-single-port-closure-the-exact-identity),
+  [trace form](docs/what-is-proved.md#6-trace-form-of-the-dirichlet-energy).
 - **Equation (10.15) (endpoint identity, `boot:endpoint-identity`).** For two probes of strength $\tau$ at sites
   $x\ne y$, with $G^0$ a right inverse of $L_0$, $`g=G^0|_{\{x,y\}}`$, $P$ the projection onto $`\{x,y\}`$ and $G$ a right
   inverse of $L_0-i\tau P$: $`2i\tau\,G^0_{xy}=S_{xy}\det(\mathbf 1-i\tau g)`$ with $`S=\mathbf 1+2i\tau\,G|_{\{x,y\}}`$
   (`AndersonAudit.endpoint_identity`), the multiplied-out form of
-  $G^0_{xy}=\frac{S_{xy}}{2i\tau}\det(\mathbf 1-i\tau g)$.
+  $G^0_{xy}=\frac{S_{xy}}{2i\tau}\det(\mathbf 1-i\tau g)$ ([card](docs/what-is-proved.md#7-two-probe-endpoint-identity)).
 
 The remaining theorems are the steps toward these. The [verification page](docs/scope.md) prints every Lean type
 beside the paper's sentence, with a fidelity verdict for each (including where the Lean statement is stronger than
