@@ -1,0 +1,43 @@
+name: Lean CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: lean-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    name: Build and placeholder check
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Reject placeholders in the library modules
+        # ComparatorChallenges/AndersonFiniteCore.lean holds the comparator statements and their `sorry` by design.
+        shell: bash
+        run: |
+          if grep -nE '\bsorry\b|\badmit\b|^\s*axiom |native_decide' \
+              AndersonAudit.lean AndersonAudit/*.lean; then
+            echo "placeholder or custom axiom found" >&2
+            exit 1
+          fi
+
+      - uses: leanprover/lean-action@f061402b660e0c34644504b324e830f2991d4865 # v1.6.1
+        with:
+          build: true
+          use-mathlib-cache: true
+
+      - name: Build the comparator statements
+        run: lake build ComparatorChallenges
