@@ -1,0 +1,9 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+title: "anderson-finite-core-lean"
+abstract: "Lean 4 formalization of the finite-dimensional algebraic identities (absorption identities, common-phase closure, single-port energy identity, endpoint identity) of the openai/math preprint Pure-Point Spectrum for the Two-Dimensional Anderson Model at Every Positive Disorder. The paper's localization theorem is not formalized."
+authors:
+  - name: "Le Chen"
+version: "0.1.0"
+repository-code: "https://github.com/chenle02/anderson-finite-core-lean"
+license: "Apache-2.0"

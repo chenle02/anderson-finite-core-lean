@@ -1,10 +1,9 @@
-# Search-before-building log (Gate 2, W6)
+# Search-before-building log
 
-Skill: `search-before-building-lean`. Date: 2026-10-07/08 (Home-Dell). Searches run from the session
-scratchpad, read-only. Zero hits do not prove absence: "not found in <sources> on <date>".
+Prior-art search before formalizing. Date: 2026-10-07/08. Searches were read-only. Zero hits do not prove absence: "not found in <sources> on <date>".
 
 Pins checked: `.lake/packages/mathlib` HEAD = `d13f23b723b8a846827a245b89c10fc7d3f11612` = manifest rev
-(identical to `~/lean-work/openai-math-072-replay/src/lean/lake-manifest.json`). Reservoir index tarball
+(the same Mathlib revision as a local replay of the openai/math Lean tree). Reservoir index tarball
 `leanprover-reservoir-index-477b5e7` (877 packages). Palomar: 469 entries, revision 187.
 
 ## 1. Mathlib at the pin (`rg -n -i <term> .lake/packages/mathlib/Mathlib`)
@@ -17,11 +16,11 @@ Pins checked: `.lake/packages/mathlib` HEAD = `d13f23b723b8a846827a245b89c10fc7d
 | `theorem adjugate_fin_two\b` | 1 | `Matrix.adjugate_fin_two` (Adjugate.lean:373) | **used** (T4b) |
 | `adjugate_mul` | 1 | `Matrix.adjugate_mul` (Adjugate.lean:269) | **used** (T4c) |
 | `theorem inv_def` | 16 | `Matrix.inv_def` (NonsingularInverse.lean:172) | **used** (T4b) |
-| `theorem mul_nonsing_inv\b` / `nonsing_inv_mul\b` | 1 / 1 | NonsingularInverse.lean:211 / :217 | not needed (two-sided inverses are hypotheses, as in the charter) |
+| `theorem mul_nonsing_inv\b` / `nonsing_inv_mul\b` | 1 / 1 | NonsingularInverse.lean:211 / :217 | not needed (two-sided inverses are hypotheses, by design) |
 | `theorem inv_eq_right_inv` / `inv_eq_left_inv` | 1 / 1 | NonsingularInverse.lean:464 / :459 | **used** `inv_eq_right_inv` (T2) |
 | `transpose_nonsing_inv` / `conjTranspose_nonsing_inv` | 11 / 6 | NonsingularInverse.lean:202 / :205 | not needed (we never use `⁻¹` of `𝓛`; `Gᵀ = G` proved from `𝓛 G = 1`) |
 | `mul_eq_one_comm` | 20 | root `mul_eq_one_comm` (Algebra/Group/Monoid.lean:54, `IsDedekindFiniteMonoid`) | **used** (one-sided ⇒ two-sided) |
-| `unitaryGroup` | 83 | `Matrix.unitaryGroup` (LinearAlgebra/UnitaryGroup.lean) | not used: T1(c) states `Sᴴ S = 1 ∧ S Sᴴ = 1` literally (charter wording) |
+| `unitaryGroup` | 83 | `Matrix.unitaryGroup` (LinearAlgebra/UnitaryGroup.lean) | not used: T1(c) states `Sᴴ S = 1 ∧ S Sᴴ = 1` literally |
 | `theorem IsHermitian` | 57 | `Matrix.IsHermitian` (Hermitian.lean:49) | not used in statements (`Hᵀ = H` for real `H` is the paper's hypothesis) |
 | `theorem trace_mul_comm` | 2 | Matrix/Trace.lean:158 | not needed (T3 via entrywise double sums) |
 | `theorem conjTranspose_mul\b` | 1 | ConjTranspose.lean:342 | **used** |
@@ -73,9 +72,8 @@ lean-operator-theory, sequential products). Decision: none applicable.
 | code `scattering matrix` | 5 | **lead**: `LeanPool/lean-pool` `LeanPool/MicrowaveNetworks/{Basic,PhaseShifters,HybridCouplersPhaseShifters}.lean` (Apache-2.0, 140★, rev `bbc67ff1`): S-parameter `Network n` with series/parallel/phase-shifter combinators. Different object (lossless network algebra, not the resolvent-derived `S = 1 + 2i YᵀGY`); not reused. `NikoBiele/RayTraceHeatTransfer.jl` formal/Thm31-32: radiative exchange, unrelated. |
 | code `Anderson model` | 0 | — |
 
-New lead for the lab ledger (`docs/org/lean-adoption-candidates.yaml`, not edited here: W6 may only write
-this repo): `LeanPool/lean-pool` MicrowaveNetworks, `discovered_via: github-code-search@2026-10-08`,
-status new, relevance: scattering-matrix network algebra.
+Lead recorded for later: `LeanPool/lean-pool` MicrowaveNetworks (found by GitHub code search on
+2026-10-08), relevance: scattering-matrix network algebra.
 
 ## 6. `lean-pkg search` (registry, index, Loogle, LeanSearch, Reservoir, Palomar, GitHub; not `--record`)
 
